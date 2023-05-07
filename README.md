@@ -12,7 +12,7 @@ A Simple To DO App build using with react &amp; tailwind
     <img src="https://img.shields.io/badge/tailwind-VS--Code-lightgrey">
 </P>
 
-![Screenshot](./)
+![Screenshot](./To-Do-App.gif)
 
 ## How To Use
 
