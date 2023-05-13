@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [addTodo, setAddTodo] = useState("");
-  const [toDos, setToDos] = useState([]);
+  const [toDos, setToDos] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS");
+    if (localValue == null) return [];
+
+    return JSON.parse(localValue);
+  });
+
+  // storing in local storage
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(toDos));
+  }, [toDos]);
 
   function defaultHandler(e) {
     e.preventDefault();
